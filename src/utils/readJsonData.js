@@ -17,7 +17,13 @@ const getTalker = async () => {
   return arrTalkers;
 };
 
+const getIdFilter = async (id) => {
+  const filteredId = await readTalker();
+  return filteredId.find((talker) => talker.id === id);
+};
+
 module.exports = {
   readTalker,
   getTalker,
+  getIdFilter,
 };
